@@ -8,12 +8,11 @@ void main()
         printf("\nDigite quantos numeros primos deseja ver: ");
         scanf("%d", &n);
         if (n<=0)
-        {
             break;
-        }
+        
         while (n>0)
         {
-            if ((cont%2!=0 && cont!=2) && (cont%3!=0 && cont!=3) && (cont%5!=0 && cont!=5) && (cont%7!=0 && cont!=7))
+            if ((cont%2!=0) && (cont%3!=0) && (cont%5!=0) && (cont%7!=0))
             {
                 printf("%d, ",cont);
                 cont++;
@@ -26,9 +25,7 @@ void main()
                 n--;
             }
             else
-            {
                 cont++;
-            }
         }
         cont=2;
     } while (1);
