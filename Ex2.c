@@ -46,18 +46,17 @@ void main()
 
         /* Letra c */
         printf("\nOs coeficientes da integral do polinomio sao: ");
-        for (i=0;i<grau+2;i++)
+        for (i=0;i<tamIt;i++)
         {
             if (i==0)
-                printf("%d ",0);
+                printf("%d ", 0);
             else
                 printf("%d ", it[i-1]);
         }
         printf("\nOs coeficientes da derivada do polinomio sao: ");
-        for (i=0;i<grau+1;i++)
+        for (i=1;i<tamDv+1;i++)
         {
-            if (i!=0)
-                printf("%d ", dv[i]);
+            printf("%d ", dv[i]);
         }
     } while (1);
     

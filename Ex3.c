@@ -1,21 +1,40 @@
 #include<stdio.h>
-#include<stdlib.h>
+#include<string.h>
+#include<stdbool.h>
 
-int checkPermutacao(int a, int b);
+bool ehPermutacao(char* a, char* b)
+{
+    int c[10] = {0,0,0,0,0,0,0,0,0,0};
+    int tamA = strlen(a), tamB = strlen(b);
+    if (tamA == tamB)
+    {
+        for (int i=0;i<tamA;i++)
+        {
+            c[a[i]-'0'] += 1;
+            c[b[i]-'0'] -= 1;
+        }
+        for (int i=0;i<10;i++)
+        {
+            if (c[i]!= 0)
+                return false;
+        }
+    }
+    else
+        return false;
+    return true;
+}
 void main()
 {
-    int check, a, b;
+    char a[9], b[9];
 
-    printf("Digite dois números separados por espaco: ");
+    printf("Digite dois numeros separados por espaco: ");
     printf("\na: ");
-    scanf("%d", &a);
+    scanf("%s", &a);
     printf("\nb: ");
-    scanf("%d", &b);
-    
-    check = checkPermutacao(a,b);
+    scanf("%s", &b);
 
-    if (check == 0)
-        printf("O numero de 'a' eh permutacao de 'b'");
-    if (check == 1)
-        printf("O numero de 'a' nao eh permutacao de 'b'");
+    if (ehPermutacao(a,b))
+        printf("O numero %s eh permutacao de %s", a, b);
+    else
+        printf("O numero %s nao eh permutacao de %s", a, b);
 }
