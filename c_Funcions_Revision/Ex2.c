@@ -1,10 +1,42 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+void calcula_integral(int* p, int* it, int tamPol)
+{
+    for (int i=0;i<tamPol;i++)
+    {
+        it[i] = p[i]/(i+1);
+    }
+}
+void calcula_derivada(int* p, int* dv, int tamPol)
+{
+    for (int i=0;i<tamPol;i++)
+    {
+        dv[i] = p[i]*i;
+    }
+}
+void printa_integral(int* it, int tamIt)
+{
+    printf("\nOs coeficientes da integral do polinomio sao: ");
+    for (int i=0;i<tamIt;i++)
+        {
+            if (i==0)
+                printf("%d ", 0);
+            else
+                printf("%d ", it[i-1]);
+        }
+}
+void printa_derivada(int* dv, int tamDv)
+{
+    printf("\nOs coeficientes da derivada do polinomio sao: ");
+        for (int i=1;i<tamDv+1;i++)
+        {
+            printf("%d ", dv[i]);
+        }
+}
 void main()
 {
-    int i, grau, tamP, tamIt, tamDv;
-
+    int i, grau, tamPol, tamIt, tamDv;
     do
     {
         printf("\nDiga o grau do polinomio: ");
@@ -13,8 +45,8 @@ void main()
             break;
         
         // Definimos os tamanhos dos polinomios com base no maior coeficiente
-        tamP = grau+1;
-        int *p = (int*) malloc(tamP * sizeof(int));
+        tamPol = grau+1;
+        int *p = (int*) malloc(tamPol * sizeof(int));
         
         tamIt = grau+2;
         int *it = (int*) malloc(tamIt * sizeof(int));
@@ -33,31 +65,16 @@ void main()
         printf("O coeficiente de maior grau do polinomio eh o: %d", p[grau]);
 
         /* Letra b */
-        //calculo a integral
-        for (i=0;i<grau+1;i++)
-        {
-            it[i] = p[i]/(i+1);
-        }
-        //calculo a derivada
-        for (i=0;i<grau+1;i++)
-        {
-            dv[i] = p[i]*i;
-        }
+        calcula_integral(p, it, tamPol);
+        calcula_derivada(p, dv, tamPol);
 
         /* Letra c */
-        printf("\nOs coeficientes da integral do polinomio sao: ");
-        for (i=0;i<tamIt;i++)
-        {
-            if (i==0)
-                printf("%d ", 0);
-            else
-                printf("%d ", it[i-1]);
-        }
-        printf("\nOs coeficientes da derivada do polinomio sao: ");
-        for (i=1;i<tamDv+1;i++)
-        {
-            printf("%d ", dv[i]);
-        }
+        printa_integral(it, tamIt);
+        printa_derivada(dv, tamDv);
+
+        /* Libero a memoria alocada */
+        free(p);
+        free(it);
+        free(dv);
     } while (1);
-    
 }
