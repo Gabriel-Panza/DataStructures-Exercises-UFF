@@ -3,14 +3,17 @@
 
 TAB* copia (TAB *a)
 {
-  /*Code is going to be here*/
+  if (!a)
+    return a;
 }
 
 void main()
 {
-    TAB *a;
-    int x = 10;
-    a = TAB_inicializa();
-    a = TAB_cria(x,NULL,NULL);
-    copia(a);
+    TAB *a, *cop;
+    int x1 = 10, x2=4, x3=16;
+    a = TAB_cria(x1,NULL,NULL);
+    a->esq = TAB_cria(x2,NULL,NULL);
+    a->dir = TAB_cria(x3,NULL,NULL);
+    cop = copia(a);
+    TAB_imp_ident(cop);
 }

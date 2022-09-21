@@ -3,7 +3,8 @@
     "stdio.h": "c",
     "stdlib.h": "c",
     "string.h": "c",
-    "stdbool.h": "c"
+    "stdbool.h": "c",
+    "tab.h": "c"
   },
   "C_Cpp_Runner.cCompilerPath": "gcc",
   "C_Cpp_Runner.cppCompilerPath": "g++",
