@@ -1,22 +1,21 @@
 #include <stdio.h>
 #include "TAB/TAB.h"
 
-TAB* copia (TAB *a)
+TAB* retira_pares (TAB* arv)
 {
-  if (!a)
-    return a;
-  return TAB_cria(a->info,copia(a->esq),copia(a->dir));
+    if (arv)
+        return arv;
 }
 
 void main()
 {
-    TAB *a, *cop;
+    TAB *a, *semPar;
 
     int x1 = 10, x2=4, x3=16;
     a = TAB_cria(x1,NULL,NULL);
     a->esq = TAB_cria(x2,NULL,NULL);
     a->dir = TAB_cria(x3,NULL,NULL);
 
-    cop = copia(a);
-    TAB_imp_ident(cop);
+    semPar = retira_pares(a);
+    TAB_imp_ident(semPar);
 }

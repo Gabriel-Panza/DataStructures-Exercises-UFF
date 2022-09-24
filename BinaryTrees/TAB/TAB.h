@@ -4,6 +4,7 @@
 typedef struct arvbin{
   int info;
   struct arvbin *esq, *dir;
+  int cor;
 }TAB;
 
 TAB *TAB_inicializa(void);

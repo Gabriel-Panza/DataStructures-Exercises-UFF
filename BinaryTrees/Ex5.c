@@ -1,22 +1,26 @@
 #include <stdio.h>
 #include "TAB/TAB.h"
 
-TAB* copia (TAB *a)
+void colore (TAB* arv)
 {
-  if (!a)
-    return a;
-  return TAB_cria(a->info,copia(a->esq),copia(a->dir));
+    /* Code to color */
+}
+
+TAB* colore_arv (TAB* arv)
+{
+    if (arv)
+        return arv;
 }
 
 void main()
 {
-    TAB *a, *cop;
+    TAB *a, *comCor;
 
     int x1 = 10, x2=4, x3=16;
     a = TAB_cria(x1,NULL,NULL);
     a->esq = TAB_cria(x2,NULL,NULL);
     a->dir = TAB_cria(x3,NULL,NULL);
 
-    cop = copia(a);
-    TAB_imp_ident(cop);
+    comCor = colore_arv(a);
+    TAB_imp_ident(comCor);
 }
