@@ -8,7 +8,7 @@ TAB* retira_pares (TAB* arv, int info)
     if(info%2==0)
     {
         arv->esq = TABB_retira_pares(arv->esq, info); 
-        arv->dir = TABB_retira(arv->dir, info);
+        arv->dir = TABB_retira(arv->dir, arv->dir->info);
     }
     else //info encontrada
     {
