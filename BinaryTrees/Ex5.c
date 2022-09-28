@@ -3,13 +3,9 @@
 
 void colore (TAB* arv)
 {
-    /* Code to color */
-}
-
-TAB* colore_arv (TAB* arv)
-{
-    if (arv)
-        return arv;
+    arv->cor= 0;
+    arv->esq->cor=1;
+    arv->dir->cor=1;
 }
 
 void main()
@@ -21,6 +17,6 @@ void main()
     a->esq = TAB_cria(x2,NULL,NULL);
     a->dir = TAB_cria(x3,NULL,NULL);
 
-    comCor = colore_arv(a);
+    colore(a);
     TAB_imp_ident(comCor);
 }
