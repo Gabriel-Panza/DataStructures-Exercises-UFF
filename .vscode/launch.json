@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/Gabriel Panza/Documents/GitHub/DataStructures-Prog-C-Exercises-UFF",
-      "program": "c:/Users/Gabriel Panza/Documents/GitHub/DataStructures-Prog-C-Exercises-UFF/build/Debug/outDebug",
+      "cwd": "c:/Users/gabri/Documents/GitHub/DataStructures-Prog-C-Exercises-UFF/Grafos",
+      "program": "c:/Users/gabri/Documents/GitHub/DataStructures-Prog-C-Exercises-UFF/Grafos/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
